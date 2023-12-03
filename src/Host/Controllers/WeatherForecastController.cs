@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using YAGO.WebProjectTemplate.Application;
 using YAGO.WebProjectTemplate.Domain;
 
-namespace YAGO.WebProjectTemplate.Web.Controllers
+namespace YAGO.WebProjectTemplate.Host.Controllers
 {
 	[ApiController]
 	[Route("[controller]")]

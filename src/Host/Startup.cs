@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using YAGO.WebProjectTemplate.Application;
 
-namespace YAGO.WebProjectTemplate.Web
+namespace YAGO.WebProjectTemplate.Host
 {
 	public class Startup
 	{
