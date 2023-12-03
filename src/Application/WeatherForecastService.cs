@@ -7,6 +7,9 @@ using YAGO.WebProjectTemplate.Domain;
 
 namespace YAGO.WebProjectTemplate.Application
 {
+	/// <summary>
+	/// Сервис получения прогноза погоды
+	/// </summary>
 	public class WeatherForecastService
 	{
 		private readonly string[] _summaries = new[]
@@ -14,6 +17,11 @@ namespace YAGO.WebProjectTemplate.Application
 			"Ясно", "Облачно", "Пасмурно", "Дождь", "Ливень", "Град", "Гроза", "Снег"
 		};
 
+		/// <summary>
+		/// Получение прогноза погоды на пять дней
+		/// </summary>
+		/// <param name="cancellationToken">ТОкен отмены</param>
+		/// <returns>Прогноз погоды на пять дней</returns>
 		public Task<IEnumerable<WeatherForecast>> GetWeatherForecastList(CancellationToken cancellationToken)
 		{
 			cancellationToken.ThrowIfCancellationRequested();

@@ -18,7 +18,6 @@ namespace YAGO.WebProjectTemplate.Host
 
 		public IConfiguration Configuration { get; }
 
-		// Этот метод вызывается средой выполнения. Используйте этот метод для добавления служб в контейнер.
 		public void ConfigureServices(IServiceCollection services)
 		{
 			AddAppServices(services);
@@ -30,18 +29,17 @@ namespace YAGO.WebProjectTemplate.Host
 			AddSwagger(services);
 		}
 
+		private static void AddAppServices(IServiceCollection services)
+		{
+			services.AddScoped<WeatherForecastService>();
+		}
+
 		private static void AddSpaStaticFiles(IServiceCollection services)
 		{
-			// В подакшене (production) файлы React будут обслуживаться из этого каталога.
 			services.AddSpaStaticFiles(configuration =>
 			{
 				configuration.RootPath = "ClientApp/build";
 			});
-		}
-
-		private static void AddAppServices(IServiceCollection services)
-		{
-			services.AddScoped<WeatherForecastService>();
 		}
 
 		private static void AddSwagger(IServiceCollection services)
@@ -52,7 +50,6 @@ namespace YAGO.WebProjectTemplate.Host
 			});
 		}
 
-		// Этот метод вызывается средой выполнения. Используйте этот метод для настройки конвейера HTTP-запросов.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			ExceptionHandling(app, env);
@@ -80,7 +77,6 @@ namespace YAGO.WebProjectTemplate.Host
 			else
 			{
 				app.UseExceptionHandler("/Error");
-				// Значение HSTS по умолчанию — 30 дней. Вы можете изменить это для рабочих сценариев, см. https://aka.ms/aspnetcore-hsts.
 				app.UseHsts();
 			}
 		}
