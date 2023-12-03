@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YAGO.WebProjectTemplate.Domain
+namespace YAGO.WebProjectTemplate.Domain.WeatherForecast
 {
 	/// <summary>
 	/// Прогноз погоды

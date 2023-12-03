@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using YAGO.WebProjectTemplate.Application;
-using YAGO.WebProjectTemplate.Domain;
+using YAGO.WebProjectTemplate.Application.WeatherForecastService;
+using YAGO.WebProjectTemplate.Domain.WeatherForecast;
 
 namespace YAGO.WebProjectTemplate.Host.Controllers
 {

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using YAGO.WebProjectTemplate.Application;
+using YAGO.WebProjectTemplate.Application.WeatherForecastService;
 
 namespace YAGO.WebProjectTemplate.Host
 {
