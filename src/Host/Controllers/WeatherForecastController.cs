@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using YAGO.Services.WeatherForecasts;
-using YAGO.Services.WeatherForecasts.Models;
+using YAGO.WebProjectTemplate.Domain;
 
 namespace YAGO.WebProjectTemplate.Web.Controllers
 {

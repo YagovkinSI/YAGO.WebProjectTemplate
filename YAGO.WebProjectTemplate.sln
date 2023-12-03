@@ -14,6 +14,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YAGO.WebProjectTemplate.App
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YAGO.WebProjectTemplate.Host", "src\Host\YAGO.WebProjectTemplate.Host.csproj", "{F8DCA402-2F1A-4966-AC75-06C65B494B5A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YAGO.WebProjectTemplate.Domain", "src\Domain\YAGO.WebProjectTemplate.Domain.csproj", "{99988D44-160B-4FBB-A17C-BF37E998FF3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{F8DCA402-2F1A-4966-AC75-06C65B494B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8DCA402-2F1A-4966-AC75-06C65B494B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8DCA402-2F1A-4966-AC75-06C65B494B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99988D44-160B-4FBB-A17C-BF37E998FF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99988D44-160B-4FBB-A17C-BF37E998FF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99988D44-160B-4FBB-A17C-BF37E998FF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99988D44-160B-4FBB-A17C-BF37E998FF3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{899B0A1C-C3CC-4FAF-A079-BA2457432246} = {E13B24A1-F393-431A-A61B-7AA63C55180E}
 		{F8DCA402-2F1A-4966-AC75-06C65B494B5A} = {E13B24A1-F393-431A-A61B-7AA63C55180E}
+		{99988D44-160B-4FBB-A17C-BF37E998FF3E} = {E13B24A1-F393-431A-A61B-7AA63C55180E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09A2724A-BF78-4559-A595-B72B9B840A71}

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using YAGO.Services.WeatherForecasts.Models;
+using YAGO.WebProjectTemplate.Domain;
 
 namespace YAGO.Services.WeatherForecasts
 {
