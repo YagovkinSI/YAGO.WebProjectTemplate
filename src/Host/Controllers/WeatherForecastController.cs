@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using YAGO.Services.WeatherForecasts;
+using System.Threading;
+using System.Threading.Tasks;
+using YAGO.WebProjectTemplate.Application;
 using YAGO.WebProjectTemplate.Domain;
 
 namespace YAGO.WebProjectTemplate.Web.Controllers
@@ -9,10 +11,19 @@ namespace YAGO.WebProjectTemplate.Web.Controllers
 	[Route("[controller]")]
 	public class WeatherForecastController : ControllerBase
 	{
-		[HttpGet]
-		public IEnumerable<WeatherForecast> Get()
+		private readonly WeatherForecastService _weatherForecastService;
+
+		public WeatherForecastController(WeatherForecastService weatherForecastService)
 		{
-			return WeatherForecastService.GetWeatherForecastList();
+			_weatherForecastService = weatherForecastService;
+		}
+
+		[HttpGet]
+		public Task<IEnumerable<WeatherForecast>> Get(CancellationToken cancellationToken)
+		{
+			cancellationToken.ThrowIfCancellationRequested();
+
+			return _weatherForecastService.GetWeatherForecastList(cancellationToken);
 		}
 	}
 }

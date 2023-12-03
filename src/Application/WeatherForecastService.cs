@@ -1,27 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using YAGO.WebProjectTemplate.Domain;
 
-namespace YAGO.Services.WeatherForecasts
+namespace YAGO.WebProjectTemplate.Application
 {
 	public class WeatherForecastService
 	{
-		private static readonly string[] Summaries = new[]
+		private readonly string[] _summaries = new[]
 		{
 			"Ясно", "Облачно", "Пасмурно", "Дождь", "Ливень", "Град", "Гроза", "Снег"
 		};
 
-		public static IEnumerable<WeatherForecast> GetWeatherForecastList()
+		public Task<IEnumerable<WeatherForecast>> GetWeatherForecastList(CancellationToken cancellationToken)
 		{
+			cancellationToken.ThrowIfCancellationRequested();
+
 			var rng = new Random();
-			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-			{
-				Date = DateTime.Now.AddDays(index),
-				TemperatureC = rng.Next(-20, 55),
-				Summary = Summaries[rng.Next(Summaries.Length)]
-			})
-			.ToArray();
+			var result = Enumerable
+				.Range(1, 5)
+				.Select(index => new WeatherForecast
+				{
+					Date = DateTime.Now.AddDays(index),
+					TemperatureC = rng.Next(-20, 55),
+					Summary = _summaries[rng.Next(_summaries.Length)]
+				});
+
+			return Task.FromResult(result);
 		}
 	}
 }
