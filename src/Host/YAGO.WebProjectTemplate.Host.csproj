@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\YAGO.Services.WeatherForecasts\YAGO.Services.WeatherForecasts.csproj" />
+    <ProjectReference Include="..\Application\YAGO.WebProjectTemplate.Application.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

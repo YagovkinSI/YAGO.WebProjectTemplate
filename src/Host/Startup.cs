@@ -5,9 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using YAGO.Services.WeatherForecasts;
+using YAGO.WebProjectTemplate.Application.WeatherForecastService;
 
-namespace YAGO.WebProjectTemplate.Web
+namespace YAGO.WebProjectTemplate.Host
 {
 	public class Startup
 	{
@@ -18,7 +18,6 @@ namespace YAGO.WebProjectTemplate.Web
 
 		public IConfiguration Configuration { get; }
 
-		// Этот метод вызывается средой выполнения. Используйте этот метод для добавления служб в контейнер.
 		public void ConfigureServices(IServiceCollection services)
 		{
 			AddAppServices(services);
@@ -30,18 +29,17 @@ namespace YAGO.WebProjectTemplate.Web
 			AddSwagger(services);
 		}
 
+		private static void AddAppServices(IServiceCollection services)
+		{
+			services.AddScoped<WeatherForecastService>();
+		}
+
 		private static void AddSpaStaticFiles(IServiceCollection services)
 		{
-			// В подакшене (production) файлы React будут обслуживаться из этого каталога.
 			services.AddSpaStaticFiles(configuration =>
 			{
 				configuration.RootPath = "ClientApp/build";
 			});
-		}
-
-		private static void AddAppServices(IServiceCollection services)
-		{
-			services.AddScoped<WeatherForecastService>();
 		}
 
 		private static void AddSwagger(IServiceCollection services)
@@ -52,7 +50,6 @@ namespace YAGO.WebProjectTemplate.Web
 			});
 		}
 
-		// Этот метод вызывается средой выполнения. Используйте этот метод для настройки конвейера HTTP-запросов.
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			ExceptionHandling(app, env);
@@ -80,7 +77,6 @@ namespace YAGO.WebProjectTemplate.Web
 			else
 			{
 				app.UseExceptionHandler("/Error");
-				// Значение HSTS по умолчанию — 30 дней. Вы можете изменить это для рабочих сценариев, см. https://aka.ms/aspnetcore-hsts.
 				app.UseHsts();
 			}
 		}
