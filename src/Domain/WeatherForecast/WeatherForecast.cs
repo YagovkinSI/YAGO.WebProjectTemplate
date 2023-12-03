@@ -7,24 +7,26 @@ namespace YAGO.WebProjectTemplate.Domain.WeatherForecast
 	/// </summary>
 	public class WeatherForecast
 	{
+		public WeatherForecast(DateTime date, int temperature, string summary)
+		{
+			Date = date;
+			Temperature = temperature;
+			Summary = summary;
+		}
+
 		/// <summary>
 		/// Дата
 		/// </summary>
-		public DateTime Date { get; set; }
+		public DateTime Date { get; }
 
 		/// <summary>
-		/// Температура в градусах Цельсия
+		/// Температура (в градусах Цельсия)
 		/// </summary>
-		public int TemperatureC { get; set; }
-
-		/// <summary>
-		/// Температура в градусах Фаренгейта
-		/// </summary>
-		public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+		public int Temperature { get; }
 
 		/// <summary>
 		/// Общее описание
 		/// </summary>
-		public string Summary { get; set; }
+		public string Summary { get; }
 	}
 }

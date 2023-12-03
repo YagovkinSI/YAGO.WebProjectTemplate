@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using YAGO.WebProjectTemplate.Application.WeatherForecastService;
 using YAGO.WebProjectTemplate.Domain.WeatherForecast;
+using YAGO.WebProjectTemplate.Host.Models;
 
 namespace YAGO.WebProjectTemplate.Host.Controllers
 {
@@ -19,11 +21,24 @@ namespace YAGO.WebProjectTemplate.Host.Controllers
 		}
 
 		[HttpGet]
-		public Task<IEnumerable<WeatherForecast>> Get(CancellationToken cancellationToken)
+		public async Task<IEnumerable<WeatherForecastApi>> Get(CancellationToken cancellationToken)
 		{
 			cancellationToken.ThrowIfCancellationRequested();
 
-			return _weatherForecastService.GetWeatherForecastList(cancellationToken);
+			var weatherForecasts = await _weatherForecastService.GetWeatherForecastList(cancellationToken);
+
+			return weatherForecasts
+				.Select(w => ToApi(w));
+		}
+
+		private static WeatherForecastApi ToApi(WeatherForecast weatherForecast)
+		{
+			return new WeatherForecastApi
+			(
+				weatherForecast.Date,
+				weatherForecast.Temperature,
+				weatherForecast.Summary
+			);
 		}
 	}
 }
