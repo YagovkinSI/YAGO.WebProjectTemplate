@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { localhostApi } from '../sevices/localhostApi';
-import { counterReducer } from './Counter';
+import { localhostApi } from './localhostApi';
+import { counterReducer } from '../features/Counter';
 
 // Всякий раз, когда отправляется (dispatched) действие (action), Redux будет обновлять каждое 
 // свойство состояния приложения (application state property) верхнего уровня, используя 
