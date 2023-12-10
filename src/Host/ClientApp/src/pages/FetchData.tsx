@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
-import { WeatherForecast, useWeatherForecastsQuery } from '../features/WeatherForecasts';
+import { useWeatherForecastsQuery } from '../features/WeatherForecasts';
+import { WeatherForecast } from "../entities/WeatherForecast";
 import AppTable, { AppTableColumn, AppTableRow } from '../shared/AppTable';
 
 const FetchData: React.FC = () => {

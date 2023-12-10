@@ -1,11 +1,5 @@
 import { localhostApi } from "../app/localhostApi";
-
-export interface WeatherForecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
-}
+import { WeatherForecast } from "../entities/WeatherForecast";
 
 const extendedApiSlice = localhostApi.injectEndpoints({
     endpoints: builder => ({
