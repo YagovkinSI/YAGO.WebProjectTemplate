@@ -1,4 +1,4 @@
-import { localhostApi } from "../app/localhostApi";
+import { localhostApi } from "../shared/localhostApi";
 import { WeatherForecast } from "../entities/WeatherForecast";
 
 const extendedApiSlice = localhostApi.injectEndpoints({
