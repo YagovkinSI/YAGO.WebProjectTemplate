@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '../app/appStore';
+import { useAppDispatch, useAppSelector } from '../appStore';
 import { counterActionIncrement } from '../features/Counter';
 
 const Counter: React.FC = () => {

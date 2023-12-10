@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './app/App';
 import registerServiceWorker from './registerServiceWorker';
-import { setupStore } from './app/appStore';
+import { setupStore } from './appStore';
 
 // Получает экземпляр хранилища (store) для всего приложения
 const store = setupStore();
